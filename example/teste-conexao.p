@@ -11,24 +11,24 @@ DO ON ERROR UNDO, LEAVE:
     ).
 
     /** Upload
-     * Par‚metro 1 : Arquivo que ser· enviado (aceita caracter coringa)
-     * Par‚metro 2 : Pasta, no servidor remoto, onde o arquivo ser· salvo
+     * Par√¢metro 1 : Arquivo que ser√° enviado (aceita caracter coringa)
+     * Par√¢metro 2 : Pasta, no servidor remoto, onde o arquivo ser√° salvo
      */
     IF FtpObject:Upload("C:\temp\foo.txt", "/foo/") THEN DO:
-        MESSAGE "Upload conclu°do com sucesso"
+        MESSAGE "Upload conclu¬°do com sucesso"
             VIEW-AS ALERT-BOX INFO BUTTONS OK.
     END.
     
-    OS-DELETE VALUE("C:\temp\teste.txt").
+    OS-DELETE VALUE("C:\temp\foo.txt").
     
     PAUSE.
     
     /** Download
-     * Par‚metro 1 : EndereÁo dos arquivos no servidor remoto (aceita caracter coringa)
-     * Par‚metro 2 : Pasta local onde os arquivos ser„o salvos
+     * Par√¢metro 1 : Endere√ßo dos arquivos no servidor remoto (aceita caracter coringa)
+     * Par√¢metro 2 : Pasta local onde os arquivos ser√£o salvos
      */
-    IF FtpObject:Download("/moderna/*", "c:\temp\") THEN DO:
-        MESSAGE "Download conclu°do com sucesso"
+    IF FtpObject:Download("/foo/*", "c:\temp\") THEN DO:
+        MESSAGE "Download conclu¬°do com sucesso"
             VIEW-AS ALERT-BOX INFO BUTTONS OK.
     END.
 
